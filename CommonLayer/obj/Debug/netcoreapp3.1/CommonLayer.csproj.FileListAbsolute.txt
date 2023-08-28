@@ -18,3 +18,13 @@ C:\Users\SREEDHAR\Desktop\repos\FunDooNote\CommonLayer\obj\Debug\netcoreapp3.1\C
 C:\Users\SREEDHAR\Desktop\repos\FunDooNote\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.csproj.CoreCompileInputs.cache
 C:\Users\SREEDHAR\Desktop\repos\FunDooNote\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.dll
 C:\Users\SREEDHAR\Desktop\repos\FunDooNote\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.pdb
+D:\repos\FunDooNote\CommonLayer\bin\Debug\netcoreapp3.1\CommonLayer.deps.json
+D:\repos\FunDooNote\CommonLayer\bin\Debug\netcoreapp3.1\CommonLayer.dll
+D:\repos\FunDooNote\CommonLayer\bin\Debug\netcoreapp3.1\CommonLayer.pdb
+D:\repos\FunDooNote\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.csproj.AssemblyReference.cache
+D:\repos\FunDooNote\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\FunDooNote\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.AssemblyInfoInputs.cache
+D:\repos\FunDooNote\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.AssemblyInfo.cs
+D:\repos\FunDooNote\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.csproj.CoreCompileInputs.cache
+D:\repos\FunDooNote\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.dll
+D:\repos\FunDooNote\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.pdb

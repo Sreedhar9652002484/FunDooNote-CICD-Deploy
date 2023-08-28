@@ -7780,11 +7780,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SREEDHAR\\Desktop\\repos\\FunDooNote\\FunDooNote\\FunDooNote.csproj",
+      "projectUniqueName": "D:\\repos\\FunDooNote\\FunDooNote\\FunDooNote.csproj",
       "projectName": "FunDooNote",
-      "projectPath": "C:\\Users\\SREEDHAR\\Desktop\\repos\\FunDooNote\\FunDooNote\\FunDooNote.csproj",
+      "projectPath": "D:\\repos\\FunDooNote\\FunDooNote\\FunDooNote.csproj",
       "packagesPath": "C:\\Users\\SREEDHAR\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SREEDHAR\\Desktop\\repos\\FunDooNote\\FunDooNote\\obj\\",
+      "outputPath": "D:\\repos\\FunDooNote\\FunDooNote\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SREEDHAR\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7801,11 +7801,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\SREEDHAR\\Desktop\\repos\\FunDooNote\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\SREEDHAR\\Desktop\\repos\\FunDooNote\\BusinessLayer\\BusinessLayer.csproj"
+            "D:\\repos\\FunDooNote\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "D:\\repos\\FunDooNote\\BusinessLayer\\BusinessLayer.csproj"
             },
-            "C:\\Users\\SREEDHAR\\Desktop\\repos\\FunDooNote\\RepoLayer\\RepoLayer.csproj": {
-              "projectPath": "C:\\Users\\SREEDHAR\\Desktop\\repos\\FunDooNote\\RepoLayer\\RepoLayer.csproj"
+            "D:\\repos\\FunDooNote\\RepoLayer\\RepoLayer.csproj": {
+              "projectPath": "D:\\repos\\FunDooNote\\RepoLayer\\RepoLayer.csproj"
             }
           }
         }
@@ -7900,7 +7900,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
       }
     }
   }
