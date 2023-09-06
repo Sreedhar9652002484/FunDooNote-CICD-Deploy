@@ -26,6 +26,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using CloudinaryDotNet;
 
 using RabbitMQ.Client;
+using Azure.Messaging.ServiceBus;
 
 
 //using Swashbuckle.AspNetCore.Examples;
@@ -39,7 +40,6 @@ namespace FunDooNoteApplication
             Configuration = configuration;
             
         }
-
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -53,6 +53,7 @@ namespace FunDooNoteApplication
             services.TryAddTransient<INotesBusiness, NotesBusiness>();
             services.TryAddTransient<INotesRepo, NotesRepo>();
             services.AddTransient<FileService, FileService>();
+            services.AddSingleton<MessageServiceBus>();
 
             services.AddSingleton<RabbitMQPublisher>(_ => new RabbitMQPublisher(new ConnectionFactory
             {
@@ -60,9 +61,11 @@ namespace FunDooNoteApplication
                 UserName = Configuration["RabbitMQSettings:UserName"],
                 Password = Configuration["RabbitMQSettings:Password"]
             }));
-            
+            services.AddTransient<ServiceBusClient>(_ => new ServiceBusClient(Configuration["AzureServiceBus:AzureConnection"]));
+            services.AddTransient<ServiceBusSender>(y => y.GetService<ServiceBusClient>().CreateSender("password-reset-queue"));
 
             //Swagger
+
             services.AddSwaggerGen(c =>
             {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "FunDoNote", Version = "v1" });
@@ -130,6 +133,15 @@ namespace FunDooNoteApplication
             {
                 options.Configuration = "localhost:6379";
             });
+
+
+            services.AddCors(data =>
+            { 
+                data.AddPolicy(name: "AllowOrigin", 
+                    builder => 
+            { 
+                builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); }); });
+
         }
 
 
@@ -149,8 +161,8 @@ namespace FunDooNoteApplication
             app.UseAuthentication();
             app.UseAuthorization();
 
-           
 
+            app.UseCors("AllowOrigin"); // Use the CORS policy
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

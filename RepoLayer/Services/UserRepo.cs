@@ -23,12 +23,14 @@ namespace RepoLayer.Services
         private readonly FunDoContext funDoContext;
         private readonly IConfiguration configuration;
         private readonly RabbitMQPublisher _rabbitMQPublisher;
+        private readonly MessageServiceBus _messageBus;
 
-        public UserRepo(FunDoContext funDoContext, IConfiguration configuration, RabbitMQPublisher rabbitMQPublisher)
+        public UserRepo(FunDoContext funDoContext, IConfiguration configuration, RabbitMQPublisher rabbitMQPublisher,MessageServiceBus messageServiceBus)
         {
             this.funDoContext = funDoContext;
             this.configuration = configuration;
             this._rabbitMQPublisher = rabbitMQPublisher;   
+            this._messageBus = messageServiceBus;   
         }
 
         //This is the UserReg method implementation using UserRegModel
@@ -47,12 +49,12 @@ namespace RepoLayer.Services
                 funDoContext.SaveChanges();
                 if (userEntity != null)
                 {
-                    var message = new UserRegistrationMessage { Email = userEntity.Email };
+                    /*var message = new UserRegistrationMessage { Email = userEntity.Email };
                     var messageJson = JsonConvert.SerializeObject(message);
                     _rabbitMQPublisher.PublishMessage("User-Registration-Queue", messageJson);
                     // Example of sending a message to the RabbitMQ queue
                     // Print a message to the console to verify
-                    Console.WriteLine($"Message sent to queue: {messageJson}");
+                   // Console.WriteLine($"Message sent to queue: {messageJson}");*/
 
                     return userEntity;
                 }
@@ -128,8 +130,12 @@ namespace RepoLayer.Services
                 if (emailValidity != null)
                 {
                     var token = GenerateJwtToken(emailValidity.Email, emailValidity.UserId);
-                   MSMQ msmq = new MSMQ();
-                    msmq.sendData2Queue(token);
+
+                    
+                    _messageBus.SendMessageToQueueAsync(email, token);
+
+/*                   MSMQ msmq = new MSMQ();
+                    msmq.sendData2Queue(token);*/
                     //Use RabbitMQService to publish the token message
                   //  _rabbitMQPublisher.PublishMessage("password-reset-queue", token);
                     return token;

@@ -234,6 +234,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Azure.Messaging.ServiceBus": {
+              "target": "Package",
+              "version": "[7.16.1, )"
+            },
             "CloudinaryDotNet": {
               "target": "Package",
               "version": "[1.22.0, )"
@@ -281,6 +285,10 @@
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "System.Diagnostics.DiagnosticSource": {
+              "target": "Package",
+              "version": "[7.0.2, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
